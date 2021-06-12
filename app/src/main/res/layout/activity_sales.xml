@@ -2,17 +2,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".SalesActivity">
 
     <ImageView
-        android:id="@+id/logoImage1"
+        android:id="@+id/logoImage3"
         android:layout_width="120dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         app:srcCompat="@drawable/sooriya_logo" />
+
+
+    <TextView
+        android:id="@+id/txtSalesItemNameHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="100dp"
+        android:text="Item" />
+
+    <TextView
+        android:id="@+id/txtSalesQtyHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp"
+        android:text="Qty" />
+
+    <TextView
+        android:id="@+id/txtSalesUnitPriceHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="100dp"
+        android:text="Unit Price" />
 
     <ListView
         android:id="@+id/listView2"
@@ -20,8 +45,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="20dp" >
+    </ListView>
+
+    <Button
+        android:id="@+id/btnTakeoutBundle"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="20dp"
+        android:text="Takeout Bundle" />
+
+    <Button
+        android:id="@+id/btnGenerateReport"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="report"
+        android:text="Generate Report" />
+
 
 </RelativeLayout>

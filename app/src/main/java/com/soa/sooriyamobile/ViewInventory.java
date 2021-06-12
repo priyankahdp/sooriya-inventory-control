@@ -1,18 +1,14 @@
 package com.soa.sooriyamobile;
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.AlertDialog;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-
+import android.graphics.Color;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +26,7 @@ public class ViewInventory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_contact);
+        setContentView(R.layout.activity_display_inventory);
 
         itemName = (TextView) findViewById(R.id.editItem);
         qty = (TextView) findViewById(R.id.editQty);
@@ -79,7 +75,7 @@ public class ViewInventory extends AppCompatActivity {
         if (extras != null) {
             int Value = extras.getInt("id");
             if (Value > 0) {
-                getMenuInflater().inflate(R.menu.display_contact, menu);
+                getMenuInflater().inflate(R.menu.display_inventory, menu);
             } else {
                 getMenuInflater().inflate(R.menu.main_menu, menu);
             }
@@ -121,10 +117,10 @@ public class ViewInventory extends AppCompatActivity {
                         startActivity(intent);
                     }
                 })
-                    .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        }
-                    });
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                            }
+                        });
 
                 AlertDialog d = builder.create();
                 d.setTitle("Delete item ");

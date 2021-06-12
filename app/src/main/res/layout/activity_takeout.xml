@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TakeOutActivity">
+
+    <ImageView
+        android:id="@+id/logoImage2"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        app:srcCompat="@drawable/sooriya_logo" />
+
+    <TextView
+        android:id="@+id/txtBundleQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="35dp"
+        android:text="Bundle Qty" />
+
+    <TextView
+        android:id="@+id/txtGrossQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="35dp"
+        android:text="Gross Qty" />
+
+    <TextView
+        android:id="@+id/txtDozenQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="35dp"
+        android:text="Dozen Qty" />
+
+    <TextView
+        android:id="@+id/txtUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="35dp"
+        android:text="Units"/>
+
+    <EditText
+        android:id="@+id/editTxtBundle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="125dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"/>
+
+    <EditText
+        android:id="@+id/editTxtGross"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="125dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"/>
+
+    <EditText
+        android:id="@+id/editTxtDozen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="125dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"/>
+
+    <EditText
+        android:id="@+id/editTxtUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="125dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="0"
+        android:focusable="false"/>
+
+    <Button
+        android:id="@+id/btnTakeoutPerform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="50dp"
+        android:text="Perform Takeout" />
+
+    <Button
+        android:id="@+id/btnTakeoutReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="250dp"
+        android:text="Clear" />
+
+</RelativeLayout>

@@ -1,40 +1,56 @@
 package com.soa.sooriyamobile;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private ListView obj;
     DBHelper mydb;
+    TextView itemNameDialog;
+    TextView qty;
+    TextView totalPrice;
+    ListViewAdapter lviewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mydb = new DBHelper(this);
-        ArrayList array_list = mydb.getAllItems();
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, array_list);
+        //ArrayList array_list = mydb.getAllItems();
+        //ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, array_list);
 
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_layout, null);
+
+        itemNameDialog = (TextView) dialogView.findViewById(R.id.editTxtItemDialog);
+        qty = (TextView) dialogView.findViewById(R.id.editTxtQtyDialog);
+        totalPrice = (TextView) dialogView.findViewById(R.id.editTxtTotalPriceDialog);
+
+        mydb = new DBHelper(this);
         obj = (ListView) findViewById(R.id.listView1);
-        obj.setAdapter(arrayAdapter);
+
+        ArrayList<SaleObj> array_list = mydb.getAllItemsForSales();
+        lviewAdapter = new ListViewAdapter(this, array_list);
+        obj.setAdapter(lviewAdapter);
+
+        //obj = (ListView) findViewById(R.id.listView1);
+        //obj.setAdapter(arrayAdapter);
         obj.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                int id_To_Search = arg2 + 1;
-
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                int id_To_Search = ((SaleObj) adapter.getItemAtPosition(position)).getId();
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", id_To_Search);
                 Intent intent = new Intent(getApplicationContext(), ViewInventory.class);
